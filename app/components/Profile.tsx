@@ -69,7 +69,7 @@ const Profile = (props: any) => {
                     <div className="rounded-full bg-white p-1 shadow-lg">
                       <div className="relative h-32 w-32 overflow-hidden rounded-full">
                         <Image
-                          src="/images/profile.jpeg"
+                          src="/images/profile.jpg"
                           alt="Profile"
                           fill
                           className="object-cover"
