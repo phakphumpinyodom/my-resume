@@ -18,14 +18,17 @@ const Experience = (props: any) => {
       describe: [
         {
           id: 1,
-          detail: "Frontend development using React.js, Node.js and TypeScript (2+ years experience)",
-          current: true
+          detail:
+            "• Frontend development using React.js, Node.js and TypeScript (2+ years experience)",
+          current: true,
         },
         {
           id: 2,
-          detail: "Full-stack development using HTML, CSS, JavaScript, PHP and MSSQL (3+ years experience)",
-          current: false
-        }
+          detail:
+            "• Full-stack development using HTML, CSS, JavaScript, PHP and MSSQL (3+ years experience)",
+          current: false,
+          textColor: false,
+        },
       ],
       duration: "December 2020 – Present",
       types: "Full-time",
@@ -37,8 +40,10 @@ const Experience = (props: any) => {
       describe: [
         {
           id: 1,
-          detail: "Full-stack development using HTML, CSS, JavaScript, PHP and MySQL (4 months experience)",
-          current: false
+          detail:
+            "• Full-stack development using HTML, CSS, JavaScript, PHP and MySQL (4 months experience)",
+          current: false,
+          textColor: false,
         }
       ],
       duration: "11 March – 28 June 2019",
@@ -48,21 +53,24 @@ const Experience = (props: any) => {
 
   const experienceTH = [
     {
-      company: "โซนี่ เทคโนโลยี (ประเทศไทย) จำกัด",
+      company: "โซนี่ เทคโนโ��ยี (ประเทศไทย) จำกัด",
       location: "อมตะซิตี้ , ชลบุรี",
       position: "วิศวกร ระบบ (พนักงานประจำ)",
       describe: [
         {
           id: 1,
-          detail: "Frontend การพัฒนาเว็บไซต์ ด้วย React.js, Node.js และ TypeScript (ประสบการณ์มากกว่า 2 ปี)",
-          current: true
+          detail:
+            "• Frontend การพัฒนาเว็บไซต์ ด้วย React.js, Node.js และ TypeScript (ประสบการณ์มากกว่า 2 ปี)",
+          current: true,
+          textColor: false,
         },
         {
           id: 2,
-          detail: "Full-stack การพัฒนาเว็บไซต์  ด้วย HTML, CSS, JavaScript, PHP และ MSSQL (ประสบการณ์มากกว่า 3 ปี)",
-          current: false
-        }
-
+          detail:
+            "• Full-stack การพัฒนาเว็บไซต์  ด้วย HTML, CSS, JavaScript, PHP และ MSSQL (ประสบการณ์มากกว่า 3 ปี)",
+          current: false,
+          textColor: false,
+        },
       ],
       duration: "ธันวาคม 2020 – ปัจจุบัน",
       types: "Full-time",
@@ -74,8 +82,10 @@ const Experience = (props: any) => {
       describe: [
         {
           id: 1,
-          detail: "Full-stack การพัฒนาเว็บไซต์ด้วย HTML, CSS, JavaScript, PHP และ MySQL (ประสบการณ์ 4 เดือน)",
-          current: false
+          detail:
+            "• Full-stack การพัฒนาเว็บไซต์ด้วย HTML, CSS, JavaScript, PHP และ MySQL (ประสบการณ์ 4 เดือน)",
+          current: false,
+          textColor: false,
         }
       ],
       duration: "11 มีนาคม – 28 มิถุนายน 2019",
@@ -106,12 +116,14 @@ const Experience = (props: any) => {
 
   return (
     <div
-      className={`mx-auto max-w-6xl px-5 py-0 mt-2 ${theme === "light" ? "bg-white" : "bg-[#0D121E]"
-        }`}
+      className={`mx-auto max-w-6xl px-5 py-0 mt-2 ${
+        theme === "light" ? "bg-white" : "bg-[#0D121E]"
+      }`}
     >
       <div
-        className={`${theme === "light" ? "text-black" : "text-[#f1f1f1]"
-          } topic-experience ms-6 pb-2`}
+        className={`${
+          theme === "light" ? "text-black" : "text-[#f1f1f1]"
+        } topic-experience ms-6 pb-2`}
       >
         <span className="font-bold">
           {language === "EN" ? "Experience" : "ประสบการณ์ทำงาน"}
@@ -123,64 +135,72 @@ const Experience = (props: any) => {
         {experienceData.map((item, idx) => (
           <div
             key={`${item.company}-${item.duration}-${idx}`}
-            className={`group relative overflow-hidden rounded-2xl border   p-4  transition
+            className={`group relative overflow-hidden rounded-2xl border p-4 transition
                        hover:scale-105 duration-200 cursor-pointer
-                       ${theme === "light"
-                ? "bg-white border-gray-200"
-                : "bg-[#0f121e] border-[#202531]"
-              }`}
+                       flex flex-col h-full
+                       ${
+                         theme === "light"
+                           ? "bg-white border-gray-200"
+                           : "bg-[#0f121e] border-[#202531]"
+                       }`}
           >
-            <div className="flex items-start gap-4">
-              {/* Left: SONY mark */}
-              <div className="shrink-0">
-                {theme === "light" ? (
-                  <Image
-                    src={asset(`/images/sony_logo_black.png`)}
-                    alt="Sony Logo"
-                    width={64}
-                    height={64}
-                    className="h-14 w-20 rounded-lg object-cover"
-                  />
-                ) : (
-                  <Image
-                    src={asset(`/images/sony_logo_white.png`)}
-                    alt="Sony Logo"
-                    width={64}
-                    height={64}
-                    className="h-14 w-20 rounded-lg object-cover"
-                  />
-                )}
-              </div>
+            {/* ✅ content wrapper to push footer to bottom */}
+            <div className="flex-1">
+              <div className="flex items-start gap-4">
+                {/* Left: SONY mark */}
+                <div className="shrink-0">
+                  {theme === "light" ? (
+                    <Image
+                      src={asset(`/images/sony_logo_black.png`)}
+                      alt="Sony Logo"
+                      width={64}
+                      height={64}
+                      className="h-14 w-20 rounded-lg object-cover"
+                    />
+                  ) : (
+                    <Image
+                      src={asset(`/images/sony_logo_white.png`)}
+                      alt="Sony Logo"
+                      width={64}
+                      height={64}
+                      className="h-14 w-20 rounded-lg object-cover"
+                    />
+                  )}
+                </div>
 
-              {/* Right: content */}
-              <div className="min-w-0 flex-1 ">
-                <div
-                  className={`truncate text-sm font-semibold ${theme === "light" ? "text-black" : "text-[#ffffff]"
+                {/* Right: content */}
+                <div className="min-w-0 flex-1">
+                  <div
+                    className={`truncate text-sm font-semibold ${
+                      theme === "light" ? "text-black" : "text-[#ffffff]"
                     }`}
-                >
-                  {item.company}
-                </div>
-                <div className="truncate text-xs text-gray-500">{item.location}</div>
+                  >
+                    {item.company}
+                  </div>
+                  <div className="truncate text-xs text-gray-500">{item.location}</div>
 
-                <div className="mt-0 truncate text-xs font-semibold text-blue-600">
-                  {item.position}
+                  <div className="mt-0 truncate text-xs font-semibold text-blue-600">
+                    {item.position}
+                  </div>
                 </div>
-
               </div>
-            </div>
-            <div>
-              {item.describe.map((desc: any, idx: number) => (
-                <p
-                  key={`${desc.id}-${desc.detail}-${idx}`}
-                  className={`${desc.current == false ? "text-gray-500" : "text-yellow-600" } truncate text-[0.6rem] text-wrap`}
-                >
-                  {"• "}{desc.detail}
-                </p>
-              ))}
+
+              <div>
+                {item.describe.map((desc: any, idx: number) => (
+                  <p
+                    key={`${desc.id}-${desc.detail}-${idx}`}
+                    className={`${
+                      desc.current == false ? "text-gray-500" : "text-yellow-600"
+                    } truncate text-[0.6rem] text-wrap`}
+                  >
+                    {desc.detail}
+                  </p>
+                ))}
+              </div>
             </div>
 
             {/* Bottom row */}
-            <div className="mt-0 flex items-end justify-between">
+            <div className="mt-auto flex items-center justify-between bottom-footer">
               <div className="text-[12px] text-gray-400 font-bold">
                 {formatDuration(item.duration)}
               </div>
