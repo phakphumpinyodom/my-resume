@@ -1,0 +1,70 @@
+image: node:20
+
+stages:
+  - install
+  - lint
+  - test
+  - build
+  - deploy
+  - sync
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm/
+    - node_modules/
+
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+
+install:
+  stage: install
+  script:
+    - npm ci
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1h
+  rules:
+    - if: $CI_COMMIT_BRANCH
+
+lint:
+  stage: lint
+  script:
+    - npm run lint
+  rules:
+    - if: $CI_COMMIT_BRANCH
+  allow_failure: true
+
+test:
+  stage: test
+  script:
+    - npm test --if-present
+  rules:
+    - if: $CI_COMMIT_BRANCH
+
+build:
+  stage: build
+  script:
+    - export DEPLOY_TARGET=GITLAB_PAGES
+    - export NEXT_PUBLIC_BASEPATH="/${CI_PROJECT_NAME}"
+
+    - npm run build
+  artifacts:
+    paths:
+      - out
+    expire_in: 1 week
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+
+pages:
+  stage: deploy
+  needs: ["build"]
+  script:
+    - rm -rf public
+    - mv out public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
