@@ -25,7 +25,7 @@ const Profile = (props: any) => {
       case "Gmail":
         return window.location.href = "mailto:phakphum.pinyodom@gmail.com?subject=Contact%20from%20Phakphum%20Pinyodom's%20Resume&body=Dear%20Mr.Phakphum%20Pinyodom%2C%0A%0A";
       case "GitLab":
-        return window.open("https://gitlab.com/capricornpp", "_blank");
+        return window.open("https://gitlab.com/phakphum.pinyodom", "_blank");
       case "GitHub":
         return window.open("https://github.com/phakphumpinyodom", "_blank");
 
