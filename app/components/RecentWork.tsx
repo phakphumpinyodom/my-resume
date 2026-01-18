@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { asset } from "../../utils/asset";
 
 import { PiFigmaLogoFill } from "react-icons/pi";
 
@@ -56,7 +57,7 @@ const RecentWork = (props: any) => {
             <div className={`${theme === "dark" ? "bg-[#0D121E]" : "bg-gray-100"} rounded-xl overflow-hidden ring-1 `}>
               {image ? (
                 <img
-                  src={image}
+                  src={asset(image)}
                   alt={title}
                   className=" w-full object-cover "
                 />

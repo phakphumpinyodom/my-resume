@@ -5,8 +5,7 @@ import Image from "next/image";
 
 import { RiGraduationCapFill } from "react-icons/ri";
 import { MdWork } from "react-icons/md";
-
-const basePath = process.env.NEXT_PUBLIC_BASEPATH ?? "";
+import { asset } from "../../utils/asset";
 
 const Experience = (props: any) => {
   const { theme, language } = props;
@@ -136,7 +135,7 @@ const Experience = (props: any) => {
               <div className="shrink-0">
                 {theme === "light" ? (
                   <Image
-                    src={`${basePath}/images/sony_logo.png`}
+                    src={asset(`/images/sony_logo_white.png`)}
                     alt="Sony Logo"
                     width={64}
                     height={64}
@@ -144,7 +143,7 @@ const Experience = (props: any) => {
                   />
                 ) : (
                   <Image
-                    src={`${basePath}/images/sony_logo_dark.png`}
+                    src={asset(`/images/sony_logo_black.png`)}
                     alt="Sony Logo"
                     width={64}
                     height={64}
