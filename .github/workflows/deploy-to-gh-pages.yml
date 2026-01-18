@@ -1,4 +1,4 @@
-name: Deploy React App to Github Pages
+name: Deploy Next.js App to Github Pages
 
 on:
   push:
@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      pages: write
-      id-token: write
 
     steps:
       - name: Checkout Repository
@@ -20,16 +18,19 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Build React App
+      - name: Build (Next.js static export)
         run: npm run build
+        env:
+          DEPLOY_TARGET: GH_PAGES
+          REPO_NAME: ${{ github.event.repository.name }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./out
