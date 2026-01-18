@@ -7,6 +7,8 @@ import { BiLogoGmail } from "react-icons/bi";
 import { FaGitlab } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 
+const basePath = process.env.NEXT_PUBLIC_BASEPATH ?? "";
+
 type ContactKey = "Gmail" | "GitLab" | "GitHub";
 
 type Props = {
@@ -69,7 +71,7 @@ const Profile = (props: any) => {
                     <div className="rounded-full bg-white p-1 shadow-lg">
                       <div className="relative h-32 w-32 overflow-hidden rounded-full">
                         <Image
-                          src="/images/profile.jpg"
+                          src={`${basePath}/images/profile.jpg`}
                           alt="Profile"
                           fill
                           className="object-cover"
@@ -81,7 +83,7 @@ const Profile = (props: any) => {
                     <div className="absolute -bottom-1 -right-1 rounded-full p-0 z-30">
                       <div className="grid h-12 w-12 place-items-center rounded-full">
                         <Image
-                          src="/images/check.png"
+                          src={`${basePath}/images/check.png`}
                           alt="Verified Badge"
                           width={24}
                           height={24}

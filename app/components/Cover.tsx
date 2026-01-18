@@ -5,12 +5,14 @@ import Image from 'next/image'
 import { SunFilled } from '@ant-design/icons';
 import { IoMoon } from "react-icons/io5";
 
+const basePath = process.env.NEXT_PUBLIC_BASEPATH ?? "";
+
 const Cover = (props : any) => {
     const { theme, setTheme, language, setLanguage } = props;
     return (
         <div className="relative w-full h-[14vh]">
             <Image
-                src="/images/cover_bg.jpg"
+                src={`${basePath}/images/cover_bg.jpg`}
                 alt="Cover Image"
                 layout="fill"
                 objectFit="cover"

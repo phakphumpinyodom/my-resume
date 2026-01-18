@@ -2,6 +2,8 @@
 import React from "react";
 import Image from "next/image";
 
+import { asset } from "../../utils/asset";
+
 const Skills = (props: any) => {
   const { theme, language } = props;
 
@@ -68,7 +70,7 @@ const Skills = (props: any) => {
                       <span className="tracking-wide" >{it.skill}</span>
 
                       <Image
-                        src={it.image}
+                        src={asset(it.image)}
                         alt={it.skill}
                         width={18}
                         height={18}
