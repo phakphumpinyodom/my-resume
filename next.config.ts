@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_BASEPATH: basePath,
   },
+  devIndicators: false,
 };
 
 export default nextConfig;

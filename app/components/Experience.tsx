@@ -135,7 +135,7 @@ const Experience = (props: any) => {
               <div className="shrink-0">
                 {theme === "light" ? (
                   <Image
-                    src={asset(`/images/sony_logo_white.png`)}
+                    src={asset(`/images/sony_logo_black.png`)}
                     alt="Sony Logo"
                     width={64}
                     height={64}
@@ -143,7 +143,7 @@ const Experience = (props: any) => {
                   />
                 ) : (
                   <Image
-                    src={asset(`/images/sony_logo_black.png`)}
+                    src={asset(`/images/sony_logo_white.png`)}
                     alt="Sony Logo"
                     width={64}
                     height={64}
