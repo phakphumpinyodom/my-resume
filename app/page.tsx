@@ -27,10 +27,12 @@ export default function Home() {
           <div className="container mx-auto">
             <Profile theme={theme} language={language} />
 
-            <AboutMe theme={theme} language={language} />
-            <Experience theme={theme} language={language} />
-            <Skills theme={theme} language={language} />
-            <RecentWork theme={theme} language={language} />
+            <div className="-translate-y-12" >
+              <AboutMe theme={theme} language={language} />
+              <Experience theme={theme} language={language} />
+              <Skills theme={theme} language={language} />
+              <RecentWork theme={theme} language={language} />
+            </div>
 
           </div>
         </div>

@@ -9,7 +9,7 @@ const RecentWork = (props: any) => {
   const recentWorks = [
     {
       id: 1,
-      title: "Streaming [Project #1]",
+      title: "Streaming Web site",
       description: "Self-Study",
       image: "/images/dune.png",
       link: {
@@ -144,7 +144,7 @@ const RecentWork = (props: any) => {
   };
 
   return (
-    <div className={`${theme === "dark" ? "bg-[#0D121E]" : "bg-white"} mx-auto max-w-6xl px-5 pb-4 mt-2 `}>
+    <div className={`${theme === "dark" ? "bg-[#0D121E]" : "bg-white"} mx-auto max-w-6xl px-5 pb-0 mt-2 `}>
       <div className={`${theme === "dark" ? "text-[#f1f1f1]" : "text-black"} topic-experience ms-6 pb-2`}>
         <span className="font-bold">
           {language === "EN" ? "Recent Work (Practice)" : "ผลงาน ล่าสุด (ฝึกซ้อม)"}

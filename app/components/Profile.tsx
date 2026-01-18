@@ -25,7 +25,7 @@ const Profile = (props: any) => {
       case "GitLab":
         return window.open("https://gitlab.com/capricornpp", "_blank");
       case "GitHub":
-        return window.open("https://github.com/capricornpp", "_blank");
+        return window.open("https://github.com/phakphumpinyodom", "_blank");
 
       default:
         return "#";
@@ -60,7 +60,7 @@ const Profile = (props: any) => {
             <div className="absolute inset-0 " />
 
             <div className="relative mx-auto max-w-6xl px-5 py-0">
-              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div className="flex flex-row gap-6 items-center justify-between">
                 {/* LEFT: avatar + text */}
                 <div className="flex items-start gap-6">
                   {/* avatar */}
@@ -96,22 +96,7 @@ const Profile = (props: any) => {
                       {language === 'EN' ? 'Phakphum Pinyodom' : 'ภาคภูมิ ภิญโญดม'}
                     </h1>
                     <p className="mt-0 text-[0.7rem] md:text-xs leading-4 text-gray-500 ">
-                      {language === 'EN' ? 'I’m a Frontend Developer based in Chonburi, Thailand' : 'นักพัฒนาฟรอนต์เอนด์ (ชลบุรี, ประเทศไทย)'}    
-                      <br />
-                      {language === 'EN' ? 
-                      ('with experience building enterprise web applications, focused' +
-                      'on performance and responsive design. Provides strategic' +
-                      'leadership on selected projects — helping shape technical' +
-                      'direction, align priorities, and drive execution. Collaborates' +
-                      'and communicates effectively with cross-functional stakeholders' +
-                      'to deliver user-centered features and is always eager to learn' +
-                      'new technologies and develop new skills.')
-                       : 
-                       ('ที่มีประสบการณ์พัฒนาเว็บแอป ระดับองค์กร โดยเน้นประสิทธิภาพและการแสดงผลที่รองรับทุกอุปกรณ์ มีบทบาทด้านการวางกลยุทธ์และภาวะผู้นำในบางโครงการ' +
-                       'ช่วยกำหนดทิศทางทางเทคนิค จัดลำดับความสำคัญ และผลักดันงานให้สำเร็จ ทำงานร่วมกับทีมพร้อมสื่อสารและประสานงานกับส่วนงานที่เกี่ยวข้อง' +
-                       'อย่างมีประสิทธิภาพเพื่อส่งมอบฟีเจอร์ที่ตอบโจทย์ผู้ใช้ และพร้อมเรียนรู้เทคโนโลยีและทักษะใหม่ ๆ อยู่เสมอ')
-                       }
-                      
+                      {language === 'EN' ? 'Based in Chonburi, Thailand' : 'ชลบุรี, ประเทศไทย'}    
                     </p>
                   </div>
                 </div>
@@ -134,13 +119,6 @@ const Profile = (props: any) => {
 
               </div>
 
-
-
-              <div className={`${theme === 'light' ? 'text-gray-900 border-gray-200' : 'text-[#f1f1f1] border-[#1C212D]'} topic-about-me ms-6 pb-1 border-b `}>
-                <span className="font-bold">
-                  {language === 'EN' ? 'About me' : 'ประวัติโดยย่อ'}
-                  </span>
-              </div>
 
             </div>
 
